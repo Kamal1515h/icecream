@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Background</title>
+    <style>
+        .main {
+            position: absolute;
+            width: 100%;
+            top: 0;
+            left: 0;
+            padding: 0px 60px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            z-index: 2;
+            box-sizing: border-box;
+        }
+        .menu {
+            margin-left: 20px;
+            text-decoration: none;
+            color: white;
+            font-size: 24px;
+        }
+        .heading {
+            text-align: center;
+            position: relative;
+            color: white;
+            z-index: 1;
+        }
+        .video-main {
+            position: relative;
+            height: 100vh;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            display: flex;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            transition: background-image 1s ease-in-out; /* Smooth transition for background image */
+        }
+        .video-main img {
+            display: none; /* Hide the image element if you're not using it */
+        }
+        .section-title {
+            text-align: center;
+            font-size: 36px;
+            margin: 40px 0;
+            color: #333;
+            font-family: Georgia, serif;
+        }
+        .dish-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            padding: 0 20px;
+            margin-bottom: 40px;
+        }
+        .dish-gallery img {
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            object-fit: cover;
+        }
+        .dish-gallery img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+        .hero-section {
+            position: relative;
+            width: 100%;
+            height: 70vh;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+        }
+        .hero-section video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+        .hero-content {
+            position: relative;
+            text-align: center;
+            z-index: 2;
+            max-width: 800px;
+        }
+        .hero-content h2 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            font-family: Georgia, serif;
+            font-weight: bold;
+        }
+        .hero-content p {
+            font-size: 24px;
+            margin-bottom: 30px;
+            font-family: Arial, sans-serif;
+        }
+        .hero-content a {
+            font-weight: bold;
+            font-size: 20px;
+            color: #fff;
+            text-decoration: none;
+            background-color: #ff5722;
+            padding: 15px 30px;
+            border-radius: 25px;
+            transition: background-color 0.3s ease;
+        }
+        .hero-content a:hover {
+            background-color: #e64a19;
+        }
+        /* New styles for products section */
+        .products-section {
+            padding: 50px 20px;
+            background-color: #f9f9f9;
+        }
+        .products-title {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 40px;
+            font-family: Georgia, serif;
+            color: #333;
+        }
+        .products-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        .product-card {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            text-align: center;
+        }
+        .product-card img {
+            width: 100%;
+            height: 60%;
+        }
+        .product-card h3 {
+            font-size: 24px;
+            margin: 20px 0;
+            font-family: Georgia, serif;
+        }
+        .product-card p {
+            font-size: 18px;
+            margin: 0 20px 20px;
+            font-family: Arial, sans-serif;
+            color: #666;
+        }
+        .product-card a {
+            display: inline-block;
+            font-size: 18px;
+            color: red;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            margin-bottom: 20px;
+            border: 2px solid red;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        .product-card a:hover {
+            background-color: orange;
+            color: white;
+        }
+        .footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+        .footer p {
+            margin: 0;
+            font-size: 16px;
+        }
+        .footer a {
+            color: #ff5722;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div>
+            <img src="logo1.png" style="height: 150px">
+        </div>
+
+        <div>
+            <a href="chicken.html" class="menu"> Home </a>
+            <a href="Product.html" class="menu"> Product </a>
+            <a href="About Us.html" class="menu"> About </a>
+            <a href="Toc.html" class="menu"> Terms and Conditions </a>
+            <a href="Contact Us.html" class="menu"> Contact Us </a>
+        </div>
+    </div>
+
+    <div class="video-main" id="slideshow">
+        <div class="heading">
+            <h1 style="font-weight: bold; font-size: 60px; text-align: center; font-family: Georgia, san-serif; color: white;"> Perfectly Cooked Chicken for Food Lovers </h1>
+            <h1 style="font-weight: bold; font-size: 20px; text-align: center; font-family: Georgia, san-serif; color: white; margin-top: -20px; margin-bottom: 40px"> Experience a taste sensation at our Chicken & Fish Shop,<br> where each dish—from crispy chicken to tender fish—is crafted daily with fresh, local <br>ingredients and unbeatable flavor. </h1>
+            <a href="#" style="font-weight: bold; font-size: 20px; text-align: center; font-family: Georgia, san-serif; color: white; text-decoration: none; background-color: red; padding: 15px 30px; border-radius: 20px; margin-top: 20px"> Shop Now </a>
+        </div>
+    </div>
+
+    <h2 class="section-title">Our Signature Dishes</h2>
+    <div class="dish-gallery">
+        <img src="cc10.jpg" alt="Dish 1">
+        <img src="cc11.jpg" alt="Dish 2">
+        <img src="cc12.jpg" alt="Dish 3">
+        <img src="cc13.jpg" alt="Dish 4">
+    </div>
+
+    <div class="hero-section">
+        <video autoplay muted loop>
+            <source src="c1.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="hero-content">
+            <h2>Experience the Extraordinary</h2>
+            <p>Discover our exclusive range of gourmet dishes and desserts that redefine culinary excellence. From the freshest ingredients to the most delectable flavors, our creations are crafted to delight your senses.</p>
+            <a href="#">Explore Now</a>
+        </div>
+    </div>
+
+    <!-- Products Section -->
+    <div class="products-section">
+        <h2 class="products-title">Our Exclusive Products</h2>
+        <div class="products-gallery">
+            <div class="product-card">
+                <img src="cc9.jpg" alt="Product 1">
+                <h3>Grilled Chicken</h3>
+                <p>$200 /-</p>
+                <a href="#">Buy Now</a>
+            </div>
+            <div class="product-card">
+                <img src="cc2.jpg" alt="Product 2">
+                <h3>Chicken Barbeque</h3>
+                <p>$300 /-</p>
+                <a href="#">Buy Now</a>
+            </div>
+            <div class="product-card">
+                <img src="cc3.jpg" alt="Product 3">
+                <h3>Chicken Changezi</h3>
+                <p>$400 /-</p>
+                <a href="#">Buy Now</a>
+            </div>
+            <div class="product-card">
+                <img src="cc4.jpg" alt="Product 4">
+                <h3>Chicken65</h3>
+                <p>$350 /-</p>
+                <a href="#">Buy Now</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <p>&copy; 2024 Chicken24/7. All Rights Reserved.</p>
+        <p><a href="chicken.html">Home</a> | <a href="Product.html">Shop</a> | <a href="About Us.html">About</a> | <a href="Toc.html">Terms and Conditions</a> | <a href="Contact Us.html">Contact Us</a></p>
+    </footer>
+
+    <script>
+        let currentIndex = 0;
+        const images = ['cc1.jpg', 'cc2.jpg', 'cc3.jpg', 'cc4.jpg', 'cc5.jpg']; // Add your image paths here
+        const slideshowElement = document.getElementById('slideshow');
+
+        function changeBackgroundImage() {
+            const beforeElement = document.createElement('div');
+            beforeElement.style.backgroundImage = `url('${images[currentIndex]}')`;
+            beforeElement.className = 'video-main';
+            slideshowElement.appendChild(beforeElement);
+
+            // Fade in new image
+            setTimeout(() => {
+                beforeElement.style.opacity = 1;
+                slideshowElement.style.backgroundImage = `url('${images[currentIndex]}')`;
+                currentIndex = (currentIndex + 1) % images.length;
+            }, 10); // Slight delay to ensure beforeElement is added before transition
+
+            // Fade out old image
+            setTimeout(() => {
+                beforeElement.style.opacity = 0;
+                setTimeout(() => beforeElement.remove(), 1000); // Remove after fade-out
+            }, 3000); // Fade-out starts after 2 seconds
+
+            // Handle the case where the transition ends
+            beforeElement.addEventListener('transitionend', () => {
+                beforeElement.style.opacity = 0;
+            });
+        }
+
+        setInterval(changeBackgroundImage, 5000); // Change image every 5 seconds
+        window.onload = changeBackgroundImage; // Set initial image on load
+    </script>
+</body>
+</html>
