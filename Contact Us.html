@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Chicken 24/7</title>
+    <style>
+        .footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+        .footer p {
+            margin: 0;
+            font-size: 16px;
+        }
+        .footer a {
+            color: #ff5722;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body style="font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f4f4f4;">
+
+    <div style="max-width: 1200px; margin: 0 auto; padding: 20px;">
+        <h1 style="text-align: center; margin-top: 50px; color: #000; font-size: 40px;">Contact Us</h1>
+
+        <div style="background-color: #fff; border-radius: 10px; padding: 30px; text-align: center; box-shadow: 0 4px 8px rgba(0,0,0,0.1); margin-bottom: 20px;">
+            <h3 style="font-size: 28px; margin-bottom: 20px; color: #000;">Our Shop</h3>
+            <p style="font-size: 18px; color: #000;">Chicken 24/7</p>
+            <p style="font-size: 18px; color: #000;">Sakchi, Jamshedpur, Jharkhand.</p>
+            <p style="font-size: 18px; color: #000;">Phone: +91 9876543210</p>
+            <p style="font-size: 18px; color: #000;">Email: <a href="#" style="color: #ff5722; text-decoration: none;">info@chicken247.com</a></p>
+            <p style="font-size: 18px; color: #000;">Working Hours: Mon - Sat: 10 AM - 8 PM</p>
+        </div>
+
+        <div style="background-color: #fff; border-radius: 10px; padding: 30px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+            <h3 style="font-size: 24px; margin-bottom: 20px; color: #000;">Get in Touch</h3>
+            <form action="submit_contact.php" method="post">
+                <label for="name" style="font-size: 18px; color: #000;">Your Name</label><br>
+                <input type="text" id="name" name="name" style="width: 100%; padding: 10px; margin-bottom: 20px; border: 1px solid #ccc; border-radius: 5px;" required><br>
+
+                <label for="email" style="font-size: 18px; color: #000;">Your Email</label><br>
+                <input type="email" id="email" name="email" style="width: 100%; padding: 10px; margin-bottom: 20px; border: 1px solid #ccc; border-radius: 5px;" required><br>
+
+                <label for="message" style="font-size: 18px; color: #000;">Your Message</label><br>
+                <textarea id="message" name="message" rows="5" style="width: 100%; padding: 10px; margin-bottom: 20px; border: 1px solid #ccc; border-radius: 5px;" required></textarea><br>
+
+                <button type="submit" style="background-color: red; color: #fff; border: none; padding: 10px 20px; border-radius: 25px; font-size: 18px; cursor: pointer;">Send Message</button>
+            </form>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2024 Chicken24/7. All Rights Reserved.</p>
+        <p><a href="chicken.html">Home</a> | <a href="Product.html">Shop</a> | <a href="About Us.html">About</a> | <a href="Toc.html">Terms and Conditions</a> | <a href="Contact Us.html">Contact Us</a></p>
+    </footer>
+
+</body>
+</html>
